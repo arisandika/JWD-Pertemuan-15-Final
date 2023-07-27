@@ -1,4 +1,5 @@
 <?php
+include '../connect.php';
 
 session_start();
 
@@ -6,8 +7,6 @@ if (!isset($_SESSION["login"])) {
   header("Location: login.php");
   exit;
 }
-
-include "../connect.php";
 
 $id_anggota = $_GET['id'];
 $q_tampil_anggota = mysqli_query($db, "SELECT * FROM tbanggota WHERE id_anggota = '$id_anggota'");
@@ -19,6 +18,7 @@ if (empty($r_tampil_anggota['foto']) || $r_tampil_anggota['foto'] == '-') {
   $foto = "../images/" . $r_tampil_anggota['foto'];
 }
 ?>
+
 <section class="flex justify-center items-center bg-gray-200 h-screen p-4">
   <div style="width: 380px;">
     <div class="bg-white border border-gray-500 pt-3 pb-10 rounded-lg px-6">

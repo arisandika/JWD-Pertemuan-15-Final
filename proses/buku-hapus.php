@@ -1,5 +1,5 @@
 <?php
-include "../connect.php";
+include '../connect.php';
 
 function deleteBuku($id_buku)
 {

@@ -1,7 +1,7 @@
 <?php
-session_start();
-
 require 'connect.php';
+
+session_start();
 
 if (isset($_SESSION["login"])) {
   header("Location: index.php");
@@ -25,10 +25,7 @@ if (isset($_POST["login"])) {
   }
   $error = true;
 }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +37,8 @@ if (isset($_POST["login"])) {
 </head>
 
 <body>
-  <section class="hero h-screen flex justify-center items-center px-4 bg-cover bg-center" style="background-image: url(https://gcdnb.pbrd.co/images/iyPBd2yY8Ypy.png?o=1);">
+  <section class="hero h-screen flex justify-center items-center px-4 bg-cover bg-center"
+    style="background-image: url(https://gcdnb.pbrd.co/images/iyPBd2yY8Ypy.png?o=1);">
     <div class="p-6 lg:p-8 space-y-6 bg-white rounded-lg shadow-xl" style="width: 400px;">
       <div class="text-center">
         <div class="text-2xl font-bold pb-1">LOGIN</div>
@@ -71,9 +69,6 @@ if (isset($_POST["login"])) {
       </form>
     </div>
   </section>
-
-
-
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>

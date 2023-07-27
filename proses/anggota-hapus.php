@@ -1,5 +1,5 @@
 <?php
-include "../connect.php";
+include '../connect.php';
 
 function deleteAnggota($id_anggota)
 {

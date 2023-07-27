@@ -25,7 +25,7 @@ if (in_array($view . '.php', $pages)) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Perpusline</title>
   <style>
     body {
       background-color: #FAFBFD;
@@ -175,9 +175,10 @@ if (in_array($view . '.php', $pages)) {
               </svg>
             </button>
             <ul id="dropdown-2" class="hidden py-2 space-y-2">
-              <li>
-                <a href="index.php?p=listborrow"
-                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Transaksi
+              <li id="pinjam" class="sidebar-item">
+                <a href="index.php?p=pinjam"
+                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
+                  onclick="loadContent('pinjam')">Transaksi
                   Peminjaman</a>
               </li>
               <li>
@@ -219,31 +220,8 @@ if (in_array($view . '.php', $pages)) {
       <?php
       include $page_path;
       ?>
-      <?php
-      // $p_dir = 'pages';
-      // if (!empty($_GET['p'])) {
-      //   $pages = scandir($p_dir, 0);
-      //   unset($pages[0], $pages[1]);
-      //   $view = $_GET['p'];
-
-      //   if (in_array($view . '.php', $pages)) {
-      //     include $p_dir . '/' . $view . '.php';
-      //   } else {
-      //     echo '<h1>Page Not Found</h1>';
-      //   }
-      // } else {
-      //   include $p_dir . '/beranda.php';
-      // }
-      ?>
     </div>
   </div>
-
-  <!-- Footer -->
-  <!-- <div class="bottom-0 relative w-full p-4 bg-white border-t">
-    <span class="block text-center sm:ml-64 text-xs sm:text-center dark:text-gray-400">© 2023 <a
-        href="https://flowbite.com/" class="hover:underline">Ari Sandika</a>. All Rights Reserved.</span>
-  </div> -->
-
 
   <script>
     function handleLinkClick(event) {
@@ -289,14 +267,7 @@ if (in_array($view . '.php', $pages)) {
       xhttp.open("GET", "pages/" + page + ".php", true);
       xhttp.send();
     }
-
   </script>
-
-
-
-
-
-
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>

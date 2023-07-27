@@ -1,8 +1,6 @@
 <?php
-include './connect.php'
-
-
-  ?>
+include './connect.php';
+?>
 
 <div class="items-center justify-center px-4 mt-4 pb-8 border rounded-lg text-center bg-white">
   <div class="grid grid-cols-1 md:grid-cols-2 justify-between text-left py-6">
@@ -45,7 +43,8 @@ include './connect.php'
           <img class="rounded w-full" src="images/<?php echo $foto ?>">
           <div class="py-2 px-1 text-left w-full">
             <h5 class="mb-1 text-sm font-bold tracking-tight text-gray-900">
-              <?php echo $r_tampil_buku['judul_buku']; ?> (<?php echo $r_tampil_buku['tahun_terbit'] ?>)
+              <?php echo $r_tampil_buku['judul_buku']; ?> (
+              <?php echo $r_tampil_buku['tahun_terbit'] ?>)
             </h5>
             <p class="mb-1 text-xs font-semibold text-gray-700">
               <?php echo $r_tampil_buku['penulis'] ?>
@@ -57,20 +56,13 @@ include './connect.php'
               style="font-size: 10px;">
               <?php echo $r_tampil_buku['kategori'] ?>
             </span>
-            <!-- <a href="#"
-              class="inline-flex w-full items-center py-2 mt-3 text-xs font-medium flex justify-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">
-              Pinjam
-            </a> -->
           </div>
         </div>
-
         <?php
       }
     }
     ?>
-
   </div>
-
 </div>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />

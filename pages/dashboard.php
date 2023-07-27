@@ -1,19 +1,13 @@
 <?php
-
 require './connect.php';
 
-// Get the count of rows in tbanggota table
 $query_anggota_count = mysqli_query($db, "SELECT COUNT(*) FROM tbanggota;");
 $row_anggota_count = mysqli_fetch_array($query_anggota_count);
 $jumlah_data_anggota = $row_anggota_count[0];
 
-// Get the count of rows in tbbuku table
 $query_buku_count = mysqli_query($db, "SELECT COUNT(*) FROM tbbuku;");
 $row_buku_count = mysqli_fetch_array($query_buku_count);
 $jumlah_data_buku = $row_buku_count[0];
-
-
-
 ?>
 
 <section>

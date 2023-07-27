@@ -1,5 +1,5 @@
 <?php
-include "../connect.php";
+include '../connect.php';
 
 $id_anggota = $_POST['id_anggota'];
 $nama = $_POST['nama'];
@@ -17,6 +17,7 @@ if (isset($_POST['simpan'])) {
 
     $folder = "../images/$file_foto";
     move_uploaded_file($lokasi_file, "$folder");
+
     $image = imagecreatefromstring(file_get_contents($folder));
     $width = imagesx($image);
     $height = imagesy($image);
@@ -34,9 +35,6 @@ if (isset($_POST['simpan'])) {
   $sql = "INSERT INTO tbanggota (id_anggota, nama, jenis_kelamin, alamat, status, foto) 
   VALUES ('$id_anggota', '$nama', '$jenis_kelamin', '$alamat', '$status', '$file_foto')";
   $query = mysqli_query($db, $sql);
-  header("Location: ../index.php?p=anggota");}
-
-
-
-
+  header("Location: ../index.php?p=anggota");
+}
 ?>

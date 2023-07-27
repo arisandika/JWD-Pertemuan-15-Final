@@ -1,7 +1,5 @@
 <?php
-
 require './connect.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +15,9 @@ require './connect.php';
     <div class="text-lg font-bold mb-4 border-b pb-3">Data Buku</div>
     <div class="grid grid-cols-1 md:grid-cols-2 justify-between">
       <div class="mb-3">
-      <button type="button"
-        class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mr-8 mb-2 focus:outline-none"><a
-          href="index.php?p=buku-input">Tambah</a></button>
+        <button type="button"
+          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mr-8 mb-2 focus:outline-none"><a
+            href="index.php?p=buku-input">Tambah</a></button>
       </div>
       <label for="table-search" class="sr-only">Search</label>
       <div class="relative ml-1 mb-3">
@@ -151,10 +149,8 @@ require './connect.php';
                     onclick="return_confirmation('Are you sure want to delete this data?')">HAPUS</a>
                 </div>
               </td>
-
             </tr>
           </tbody>
-
           <?php
           $nomor++;
         }
@@ -206,12 +202,8 @@ require './connect.php';
         echo "</div>";
       }
       ?>
-
     </div>
   </div>
-
-
-
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>

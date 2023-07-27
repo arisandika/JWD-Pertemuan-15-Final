@@ -1,7 +1,5 @@
 <?php
-
 require './connect.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -149,10 +147,8 @@ require './connect.php';
                     class="text-blue-600 hover:text-white hover:bg-blue-800 border px-2 py-1 border-blue-600 rounded">PRINT</a>
                 </div>
               </td>
-
             </tr>
           </tbody>
-
           <?php
           $nomor++;
         }
@@ -204,12 +200,8 @@ require './connect.php';
         echo "</div>";
       }
       ?>
-
     </div>
   </div>
-
-
-
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>

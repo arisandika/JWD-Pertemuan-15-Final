@@ -12,7 +12,6 @@ if (empty($r_tampil_buku['foto']) || $r_tampil_buku['foto'] == '-') {
 }
 ?>
 
-
 <div class="relative overflow-x-auto bg-white border sm:rounded-lg p-4 mt-4 pb-10">
   <div class="text-lg font-bold mb-3 border-b pb-3">Edit Data Buku</div>
   <!-- Table -->
@@ -57,7 +56,8 @@ if (empty($r_tampil_buku['foto']) || $r_tampil_buku['foto'] == '-') {
             Penulis
           </td>
           <td class="lg:py-3 py-2 px-5">
-            <input type="text" name="penulis" value="<?php echo $r_tampil_buku['penulis']; ?>" id="small-input" placeholder="Ditulis oleh"
+            <input type="text" name="penulis" value="<?php echo $r_tampil_buku['penulis']; ?>" id="small-input"
+              placeholder="Ditulis oleh"
               class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
           </td>
         </tr>
@@ -86,7 +86,7 @@ if (empty($r_tampil_buku['foto']) || $r_tampil_buku['foto'] == '-') {
             Kategori
           </td>
           <td class="lg:py-3 py-2 px-5">
-            <select name="kategori" 
+            <select name="kategori"
               class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
               <option selected disabled>Pilih Kategori</option>
               <option selected value="<?php echo $r_tampil_buku['kategori']; ?>"><?php echo $r_tampil_buku['kategori']; ?></option>
@@ -128,10 +128,6 @@ if (empty($r_tampil_buku['foto']) || $r_tampil_buku['foto'] == '-') {
     </tbody>
   </table>
 </div>
-
-
-
-
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>

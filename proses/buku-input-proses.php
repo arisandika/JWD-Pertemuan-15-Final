@@ -1,5 +1,5 @@
 <?php
-include "../connect.php";
+include '../connect.php';
 
 $id_buku = $_POST['id_buku'];
 $judul_buku = $_POST['judul_buku'];
