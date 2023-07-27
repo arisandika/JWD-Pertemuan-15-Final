@@ -73,10 +73,12 @@ $jumlah_data_buku = $row_buku_count[0];
         <img class="object-cover w-full rounded h-96 md:h-auto md:w-48 md:rounded-none"
           src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="">
         <div class="flex flex-col justify-between p-5 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology
-            acquisitions 2021</h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-            acquisitions of 2021 so far, in reverse chronological order.</p>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Perpusline - Empowering Readers: A Library for Everyone</h5>
+          <p class="font-normal text-gray-700 dark:text-gray-400">Perpusline, also known as "Library for Everyone," is a
+            modern and inclusive digital library platform that aims to provide easy access to a vast collection of
+            books, magazines, journals, and other reading materials for people of all ages and backgrounds. It is
+            designed to be a comprehensive online resource center, promoting knowledge, learning, and literacy in an
+            engaging and user-friendly manner.</p>
         </div>
       </div>
     </div>
