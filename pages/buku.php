@@ -15,9 +15,132 @@ require './connect.php';
     <div class="text-lg font-bold mb-4 border-b pb-3">Data Buku</div>
     <div class="grid grid-cols-1 md:grid-cols-2 justify-between">
       <div class="mb-3">
-        <button type="button"
-          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mr-8 mb-2 focus:outline-none"><a
-            href="index.php?p=buku-input">Tambah</a></button>
+        <!-- Modal toggle -->
+        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none"
+          type="button">
+          Tambah
+        </button>
+
+        <!-- Main modal -->
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+          class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative w-full max-w-lg max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+              <div class="px-6 py-5">
+                <div class="text-lg font-bold mb-4">Input Data Buku</div>
+                <table class="table-fixed w-full text-sm text-gray-500">
+                  <tbody>
+                    <form action="proses/buku-input-proses.php" method="post" enctype="multipart/form-data">
+                      <tr>
+                        <td class="py-2 w-16">
+                          Cover
+                        </td>
+                        <td class="py-2">
+                          <div class="flex items-center justify-center w-full">
+                            <input
+                              class="block w-full text-xs border border-gray-300 rounded-lg cursor-pointer"
+                              id="small_size" type="file" name="foto">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 w-16">
+                          ID Buku
+                        </td>
+                        <td class="py-3">
+                          <input type="text" name="id_buku" id="small-input" placeholder="ID Buku"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Judul Buku
+                        </td>
+                        <td class="py-2">
+                          <input type="text" name="judul_buku" id="small-input" placeholder="Judul Buku"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Penulis
+                        </td>
+                        <td class="py-2">
+                          <input type="text" name="penulis" id="small-input" placeholder="Ditulis oleh"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Tahun Terbit
+                        </td>
+                        <td class="py-2">
+                          <input type="text" name="tahun_terbit" id="small-input" placeholder="Tahun Terbit"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Penerbit
+                        </td>
+                        <td class="py-2">
+                          <input type="text" name="penerbit" id="small-input" placeholder="Penerbit"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Kategori
+                        </td>
+                        <td class="py-2">
+                          <select name="kategori"
+                            class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
+                            <option selected disabled>Pilih Kategori</option>
+                            <option value="Fiksi">Fiksi</option>
+                            <option value="Non-Fiksi">Non-Fiksi</option>
+                            <option value="Sastra">Sastra</option>
+                            <option value="Fantasi dan Fiksi Ilmiah">Fantasi dan Fiksi Ilmiah</option>
+                            <option value="Misteri dan Thriller">Misteri dan Thriller</option>
+                            <option value="Sejarah">Sejarah</option>
+                            <option value="Psikologi">Psikologi</option>
+                            <option value="Teknologi dan Sains">Teknologi dan Sains</option>
+                            <option value="Politik dan Sosial">Politik dan Sosial</option>
+                            <option value="Filsafat">Filsafat</option>
+                            <option value="Bisnis dan Keuangan">Bisnis dan Keuangan</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                            <option value="Agama dan Spiritualitas">Agama dan Spiritualitas</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Kesehatan dan Kebugaran">Kesehatan dan Kebugaran</option>
+                            <option value="Anak-anak dan Remaja">Anak-anak dan Remaja</option>
+                            <option value="Kuliner">Kuliner</option>
+                            <option value="Seni, Musik dan Fotografi">Seni, Musik dan Fotografi</option>
+                            <option value="Komik dan Novel">Komik dan Novel</option>
+                            <option value="Hobi dan Kerajinan Tangan">Hobi dan Kerajinan Tangan</option>
+                            <option value="Lingkungan dan Alam">Lingkungan dan Alam</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="w-16">
+                        </td>
+                        <td class="mt-8 flex justify-end">
+                          <button type="submit" name="simpan" value="simpan"
+                            class="px-5 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Simpan</button>
+                          <button type="button"
+                            class="px-5 py-2 ml-2 text-sm font-medium text-center text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300"
+                            data-modal-hide="authentication-modal">Close
+                          </button>
+                        </td>
+                      </tr>
+                    </form>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <label for="table-search" class="sr-only">Search</label>
       <div class="relative ml-1 mb-3">
@@ -34,7 +157,7 @@ require './connect.php';
               class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search for books">
             <button type="submit" name="search" value="search"
-              class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none">Cari
+              class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2">Cari
             </button>
           </form>
         </div>

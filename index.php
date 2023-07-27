@@ -12,11 +12,11 @@ $view = isset($_GET['p']) ? basename($_GET['p']) : 'beranda';
 $pages = scandir($p_dir, 0);
 unset($pages[0], $pages[1]);
 
-if (in_array($view . '.php', $pages)) {
-  $page_path = $p_dir . '/' . $view . '.php';
-} else {
-  $page_path = $p_dir . '/beranda.php';
+if (empty($view) || !in_array($view . '.php', $pages)) {
+  $view = 'beranda';
 }
+
+$page_path = $p_dir . '/' . $view . '.php';
 ?>
 
 <!DOCTYPE html>
@@ -96,22 +96,22 @@ if (in_array($view . '.php', $pages)) {
   <!-- Sidebar -->
   <div class="sidebar">
     <aside id="logo-sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen pt-5 lg:px-4 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
+      class="fixed top-0 left-0 z-40 w-64 h-screen pt-5 lg:px-2 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
       aria-label="Sidebar">
       <div class="h-full px-3 pb-4 overflow-y-auto text-gray-700">
         <ul class="space-y-2 font-medium text-sm">
           <li>
             <a>
-              <div class="flex px-3 mb-6">
-                <img src="./images/logo.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-                <span class="self-center font-bold sm:text-xl whitespace-nowrap text-purple-700">Perpusline</span>
+              <div class="flex items-center px-1.5 lg:px-6 mb-6">
+                <img src="./images/logo.png" class="h-6 mr-2 sm:h-7" />
+                <span class="self-center font-bold text-lg sm:text-xl text-purple-700">Perpusline</span>
               </div>
             </a>
           </li>
           <li class="sidebar-item">
-            <a id="beranda" onclick="loadContent('beranda')"
-              class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200"
-              onclick="loadContent('dashboard')" id="dashboardLink">
+            <a class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200 <?php echo ($view === 'beranda') ? 'active-link' : ''; ?>"
+              style="<?php echo ($view === 'beranda') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>"
+              onclick="loadContent('beranda')" data-page="beranda">
               <svg class="sidebar-item flex-shrink-0 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -122,7 +122,7 @@ if (in_array($view . '.php', $pages)) {
           </li>
           <li class="sidebar-item">
             <a class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200"
-              onclick="loadContent('dashboard')" id="dashboardLink">
+              onclick="loadContent('dashboard')" data-page="dashboard">
               <svg class="sidebar-item flex-shrink-0 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 22 21">
                 <path
@@ -149,13 +149,11 @@ if (in_array($view . '.php', $pages)) {
               </svg>
             </button>
             <ul id="dropdown-example" class="hidden py-2 space-y-2">
-              <li id="anggota" class="sidebar-item">
-                <a class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
-                  onclick="loadContent('anggota')">Data Anggota</a>
+              <li>
+                <a href="index.php?p=anggota" class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Data Anggota</a>
               </li>
-              <li id="buku" class="sidebar-item">
-                <a class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
-                  onclick="loadContent('buku')">Data Buku</a>
+              <li>
+                <a href="index.php?p=buku" class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Data Buku</a>
               </li>
             </ul>
           </li>
@@ -178,7 +176,7 @@ if (in_array($view . '.php', $pages)) {
               <li id="pinjam" class="sidebar-item">
                 <a href="index.php?p=pinjam"
                   class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
-                  onclick="loadContent('pinjam')">Transaksi
+                  onclick="loadContent('pinjam')" data-page="pinjam">Transaksi
                   Peminjaman</a>
               </li>
               <li>

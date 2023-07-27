@@ -25,11 +25,105 @@ require './connect.php';
           </svg>
           <span class="ml-2">Print</span>
         </button>
-        <button type="button"
-          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none"><a
-            href="index.php?p=anggota-input">Tambah</a></button>
+
+        <!-- Modal toggle -->
+        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none"
+          type="button">
+          Tambah
+        </button>
+
+        <!-- Main modal -->
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+          class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative w-full max-w-lg max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+              <div class="px-6 py-5">
+                <div class="text-lg font-bold mb-4">Input Data Anggota</div>
+                <table class="table-fixed w-full text-sm text-gray-500">
+                  <tbody>
+                    <form action="proses/anggota-input-proses.php" method="post" enctype="multipart/form-data">
+                      <tr>
+                        <td class="py-2 w-16">
+                          Foto
+                        </td>
+                        <td class="py-2">
+                          <div class="flex items-center justify-center w-full">
+                            <input
+                              class="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
+                              id="small_size" type="file" name="foto">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 w-16">
+                          ID Anggota
+                        </td>
+                        <td class="py-3">
+                          <input type="text" name="id_anggota" id="small-input" placeholder="ID Anggota"
+                            class="block w-full p-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-2 w-16">
+                          Nama
+                        </td>
+                        <td class="py-2">
+                          <input type="text" name="nama" id="small-input" placeholder="Nama"
+                            class="block w-full p-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="lg:py-4 py-2 w-16">
+                          Jenis Kelamin
+                        </td>
+                        <td class="lg:py-4 py-3 flex gap-4 px-3">
+                          <div class="flex items-center">
+                            <input id="default-radio-1" type="radio" value="Pria" name="jenis_kelamin" checked
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0">
+                            <label for="default-radio-1"
+                              class="ml-2 text-xs font-medium text-gray-600">Pria</label>
+                          </div>
+                          <div class="flex items-center">
+                            <input id="default-radio-2" type="radio" value="Wanita" name="jenis_kelamin"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0">
+                            <label for="default-radio-2"
+                              class="ml-2 text-xs font-medium text-gray-600">Wanita</label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="w-16">
+                          Alamat
+                        </td>
+                        <td class="py-2">
+                          <textarea id="message" rows="4" name="alamat"
+                            class="block p-2.5 text-xs  w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Input alamat here..."></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="w-16">
+                        </td>
+                        <td class="mt-8 flex justify-end">
+                          <button type="submit" name="simpan" value="simpan"
+                            class="px-5 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Simpan</button>
+                          <button type="button"
+                            class="px-5 py-2 ml-2 text-sm font-medium text-center text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300"
+                            data-modal-hide="authentication-modal">Close
+                          </button>
+                        </td>
+                      </tr>
+                    </form>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <label for="table-search" class="sr-only">Search</label>
+      <label for=" table-search" class="sr-only">Search</label>
       <div class="relative ml-1 mb-3">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg class="w-4 h-4 text-gray-500 mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -44,7 +138,7 @@ require './connect.php';
               class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search for users">
             <button type="submit" name="search" value="search"
-              class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none">Cari
+              class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2">Cari
             </button>
           </form>
         </div>
@@ -118,22 +212,22 @@ require './connect.php';
           ?>
           <tbody>
             <tr class="bg-white border-b">
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="lg:px-3 px-2 py-2">
                 <?php echo $nomor; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="lg:px-3 px-2 py-2">
                 <?php echo $r_tampil_anggota['id_anggota']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2 text-left">
+              <td class="lg:px-3 px-2 py-2 text-left">
                 <?php echo $r_tampil_anggota['nama']; ?>
               </td>
-              <td class="lg:py-3 py-2 flex justify-center text-xs items-center">
+              <td class="py-2 flex justify-center text-xs items-center">
                 <img class="rounded-full" src="images/<?php echo $foto ?>" width="40px" height="40px">
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="lg:px-3 px-2 py-2">
                 <?php echo $r_tampil_anggota['jenis_kelamin']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2 text-left">
+              <td class="lg:px-3 px-2 py-2 text-left">
                 <?php echo $r_tampil_anggota['alamat']; ?>
               </td>
               <td class="px-2 py-2 justify-center text-xs items-center">
@@ -202,6 +296,7 @@ require './connect.php';
       ?>
     </div>
   </div>
+
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
