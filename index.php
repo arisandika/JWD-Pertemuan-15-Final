@@ -173,11 +173,9 @@ $page_path = $p_dir . '/' . $view . '.php';
               </svg>
             </button>
             <ul id="dropdown-2" class="hidden py-2 space-y-2">
-              <li id="pinjam" class="sidebar-item">
+              <li>
                 <a href="index.php?p=pinjam"
-                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
-                  onclick="loadContent('pinjam')" data-page="pinjam">Transaksi
-                  Peminjaman</a>
+                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Transaksi Peminjaman</a>
               </li>
               <li>
                 <a href="index.php?p=listreturn"
