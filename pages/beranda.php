@@ -5,8 +5,7 @@ include './connect.php';
 <div class="items-center justify-center px-4 mt-4 pb-8 border rounded-lg text-center bg-white">
   <div class="grid grid-cols-1 md:grid-cols-2 justify-between text-left py-6">
     <div class="text-2xl font-bold mb-5 lg:mb-0">Discover</div>
-    <label for="table-search" class="sr-only">Search</label>
-    <div class="relative ml-1">
+    <div class="relative">
       <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 20 20">
@@ -17,11 +16,8 @@ include './connect.php';
       <div>
         <form method="post" class="flex gap-2">
           <input type="text" name="pencarian"
-            class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Search for books">
-          <button type="submit" name="search" value="search"
-            class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 focus:outline-none">Cari
-          </button>
+            class="block p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Search for book">
         </form>
       </div>
     </div>
@@ -43,7 +39,8 @@ include './connect.php';
           <img class="rounded w-full" src="images/<?php echo $foto ?>">
           <div class="py-2 px-1 text-left w-full">
             <h5 class="mb-1 text-sm font-bold tracking-tight text-gray-900">
-              <?php echo $r_tampil_buku['judul_buku']; ?> (<?php echo $r_tampil_buku['tahun_terbit'] ?>)
+              <?php echo $r_tampil_buku['judul_buku']; ?> (
+              <?php echo $r_tampil_buku['tahun_terbit'] ?>)
             </h5>
             <p class="mb-1 text-xs font-semibold text-gray-700">
               <?php echo $r_tampil_buku['penulis'] ?>

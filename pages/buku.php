@@ -14,10 +14,10 @@ require './connect.php';
   <div class="relative overflow-x-auto bg-white border rounded-lg p-4 mt-4">
     <div class="text-lg font-bold mb-4 border-b pb-3">Data Buku</div>
     <div class="grid grid-cols-1 md:grid-cols-2 justify-between">
-      <div class="mb-3">
+      <div class="mb-4">
         <!-- Modal toggle -->
         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2 focus:outline-none"
+          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 focus:outline-none"
           type="button">
           Tambah
         </button>
@@ -28,34 +28,33 @@ require './connect.php';
           <div class="relative w-full max-w-lg max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
-              <div class="px-6 py-5">
+              <div class="px-6 pt-5">
                 <div class="text-lg font-bold mb-4">Input Data Buku</div>
                 <table class="table-fixed w-full text-sm text-gray-500">
                   <tbody>
                     <form action="proses/buku-input-proses.php" method="post" enctype="multipart/form-data">
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Cover
                         </td>
                         <td class="py-2">
                           <div class="flex items-center justify-center w-full">
-                            <input
-                              class="block w-full text-xs border border-gray-300 rounded-lg cursor-pointer"
+                            <input class="block w-full text-xs border border-gray-300 rounded-lg cursor-pointer"
                               id="small_size" type="file" name="foto">
                           </div>
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-3 w-16">
+                        <td class="py-2 w-16">
                           ID Buku
                         </td>
-                        <td class="py-3">
+                        <td class="py-2">
                           <input type="text" name="id_buku" id="small-input" placeholder="ID Buku"
                             class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Judul Buku
                         </td>
                         <td class="py-2">
@@ -64,7 +63,7 @@ require './connect.php';
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Penulis
                         </td>
                         <td class="py-2">
@@ -73,7 +72,7 @@ require './connect.php';
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Tahun Terbit
                         </td>
                         <td class="py-2">
@@ -82,7 +81,7 @@ require './connect.php';
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Penerbit
                         </td>
                         <td class="py-2">
@@ -91,7 +90,7 @@ require './connect.php';
                         </td>
                       </tr>
                       <tr>
-                        <td class="py-2 w-16">
+                        <td class="w-16">
                           Kategori
                         </td>
                         <td class="py-2">
@@ -125,7 +124,7 @@ require './connect.php';
                       <tr>
                         <td class="w-16">
                         </td>
-                        <td class="mt-8 flex justify-end">
+                        <td class="flex justify-end py-4">
                           <button type="submit" name="simpan" value="simpan"
                             class="px-5 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Simpan</button>
                           <button type="button"
@@ -142,10 +141,9 @@ require './connect.php';
           </div>
         </div>
       </div>
-      <label for="table-search" class="sr-only">Search</label>
-      <div class="relative ml-1 mb-3">
+      <div class="relative mb-4">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <svg class="w-4 h-4 text-gray-500 mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -154,11 +152,8 @@ require './connect.php';
         <div>
           <form method="post" class="flex gap-2">
             <input type="text" name="pencarian"
-              class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Search for books">
-            <button type="submit" name="search" value="search"
-              class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 mb-2">Cari
-            </button>
+              class="block p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Search for book">
           </form>
         </div>
       </div>
@@ -168,31 +163,31 @@ require './connect.php';
     <table class="table-fixed w-full text-sm text-center text-gray-500 bg-gray-100">
       <thead class="text-xs text-gray-700 uppercase">
         <tr>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             NO
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             ID Buku
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Judul Buku
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Penulis
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Foto
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Tahun
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Penerbit
           </th>
-          <th class="lg:px-3 px-2 lg:py-4 py-2">
+          <th class="py-3 px-2">
             Kategori
           </th>
-          <th id="label-opsi" class="lg:py-4 py-2">
+          <th id="label-opsi" class="py-3 px-2">
             Action
           </th>
         </tr>
@@ -239,28 +234,28 @@ require './connect.php';
           ?>
           <tbody>
             <tr class="bg-white border-b">
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="py-3 px-2">
                 <?php echo $nomor; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="py-3 px-2">
                 <?php echo $r_tampil_buku['id_buku']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2 text-left">
+              <td class="py-3 px-2 text-left">
                 <?php echo $r_tampil_buku['judul_buku']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2 text-left">
+              <td class="py-3 px-2 text-left">
                 <?php echo $r_tampil_buku['penulis']; ?>
               </td>
-              <td class="lg:py-3 py-2 flex justify-center text-xs items-center">
+              <td class="py-3 px-2 flex justify-center text-xs items-center">
                 <img class="rounded" src="images/<?php echo $foto ?>" width="40px" height="40px">
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="py-3 px-2">
                 <?php echo $r_tampil_buku['tahun_terbit']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2 text-left">
+              <td class="py-3 px-2 text-left">
                 <?php echo $r_tampil_buku['penerbit']; ?>
               </td>
-              <td class="lg:px-3 px-2 lg:py-3 py-2">
+              <td class="py-3 px-2">
                 <?php echo $r_tampil_buku['kategori']; ?>
               </td>
               <td class="px-2 py-2 justify-center text-xs items-center">
