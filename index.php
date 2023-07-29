@@ -121,10 +121,10 @@ $page_path = $p_dir . '/' . $view . '.php';
               </div>
             </a>
           </li>
-          <li class="sidebar-item">
-            <a class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200 <?php echo ($view === 'beranda') ? 'active-link' : ''; ?>"
-              style="<?php echo ($view === 'beranda') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>"
-              onclick="loadContent('beranda')" data-page="beranda">
+          <li>
+            <a href="index.php?p=beranda"
+              class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200 <?php echo ($view === 'beranda') ? 'active-link' : ''; ?>"
+              style="<?php echo ($view === 'beranda') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">
               <svg class="sidebar-item flex-shrink-0 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 20">
                 <path
@@ -133,9 +133,10 @@ $page_path = $p_dir . '/' . $view . '.php';
               <span class="ml-3 text-sm">Home</span>
             </a>
           </li>
-          <li class="sidebar-item">
-            <a class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200"
-              onclick="loadContent('dashboard')" data-page="dashboard">
+          <li>
+            <a href="index.php?p=dashboard"
+              class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200"
+              style="<?php echo ($view === 'dashboard') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">
               <svg class="sidebar-item flex-shrink-0 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 22 21">
                 <path
@@ -164,12 +165,14 @@ $page_path = $p_dir . '/' . $view . '.php';
             <ul id="dropdown-example" class="hidden py-2 space-y-2">
               <li>
                 <a href="index.php?p=anggota"
-                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Member
+                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
+                  style="<?php echo ($view === 'anggota') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">Member
                   Data</a>
               </li>
               <li>
                 <a href="index.php?p=buku"
-                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Book
+                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
+                  style="<?php echo ($view === 'buku') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">Book
                   Data</a>
               </li>
             </ul>
@@ -192,13 +195,15 @@ $page_path = $p_dir . '/' . $view . '.php';
             <ul id="dropdown-2" class="hidden py-2 space-y-2">
               <li>
                 <a href="index.php?p=pinjam"
-                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200">Loan
+                  class="flex items-center w-full p-2 cursor-pointer transition rounded-lg pl-10 group hover:bg-purple-200"
+                  style="<?php echo ($view === 'pinjam') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">Loan
                   Transaction</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="index.php?p=laporan" class="flex items-center p-2 rounded-lg hover:bg-purple-200 group">
+            <a href="index.php?p=laporan" class="flex items-center p-2 rounded-lg hover:bg-purple-200 group"
+              style="<?php echo ($view === 'laporan') ? 'background-color: #6c2bd9; color: #fff;' : ''; ?>">
               <svg class="flex-shrink-0 w-5 h-5 group-hover:text-gray-900" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path
