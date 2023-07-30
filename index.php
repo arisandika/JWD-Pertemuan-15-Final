@@ -1,4 +1,6 @@
 <?php
+require 'connect.php';
+
 session_start();
 
 if (!isset($_SESSION["login"])) {
@@ -25,11 +27,12 @@ $page_path = $p_dir . '/' . $view . '.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/logo.png">
   <title>Perpusline</title>
   <style>
-    body {
-      background-color: #FAFBFD;
-    }
+  body {
+    background-color: #FAFBFD;
+  }
   </style>
 </head>
 
@@ -73,7 +76,7 @@ $page_path = $p_dir . '/' . $view . '.php';
           </div>
           <div class="flex justify-end items-center">
             <div>
-              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300"
+              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 mr-2"
                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                 <img class="w-8 h-8 rounded-full" src="images/3321.png" alt="user photo">
               </button>
@@ -238,49 +241,49 @@ $page_path = $p_dir . '/' . $view . '.php';
   </div>
 
   <script>
-    function handleLinkClick(event) {
-      event.preventDefault();
+  function handleLinkClick(event) {
+    event.preventDefault();
 
-      resetLinkBackground();
+    resetLinkBackground();
 
-      var links = event.currentTarget.parentElement.getElementsByTagName('a');
-      for (var i = 0; i < links.length; i++) {
-        links[i].classList.remove('active-link');
-        links[i].style.backgroundColor = "";
-      }
-
-      event.currentTarget.classList.add('active-link');
-      event.currentTarget.style.backgroundColor = "#6c2bd9";
-      event.currentTarget.style.color = "#fff";
-
-      loadContent(event.currentTarget.getAttribute('data-page'));
-    }
-
-    function resetLinkBackground() {
-      var links = document.querySelectorAll('.sidebar-item a');
-      for (var i = 0; i < links.length; i++) {
-        links[i].classList.remove('active-link');
-        links[i].style.backgroundColor = '';
-        links[i].style.color = '';
-      }
-    }
-
-    var links = document.querySelectorAll('.sidebar-item a');
-
+    var links = event.currentTarget.parentElement.getElementsByTagName('a');
     for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', handleLinkClick);
+      links[i].classList.remove('active-link');
+      links[i].style.backgroundColor = "";
     }
 
-    function loadContent(page) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("main-content").innerHTML = this.responseText;
-        }
-      };
-      xhttp.open("GET", "pages/" + page + ".php", true);
-      xhttp.send();
+    event.currentTarget.classList.add('active-link');
+    event.currentTarget.style.backgroundColor = "#6c2bd9";
+    event.currentTarget.style.color = "#fff";
+
+    loadContent(event.currentTarget.getAttribute('data-page'));
+  }
+
+  function resetLinkBackground() {
+    var links = document.querySelectorAll('.sidebar-item a');
+    for (var i = 0; i < links.length; i++) {
+      links[i].classList.remove('active-link');
+      links[i].style.backgroundColor = '';
+      links[i].style.color = '';
     }
+  }
+
+  var links = document.querySelectorAll('.sidebar-item a');
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', handleLinkClick);
+  }
+
+  function loadContent(page) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("main-content").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "pages/" + page + ".php", true);
+    xhttp.send();
+  }
   </script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />

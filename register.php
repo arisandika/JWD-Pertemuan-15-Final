@@ -3,6 +3,10 @@ require 'connect.php';
 
 session_start();
 
+if (isset($_SESSION["login"])) {
+	header("Location: index.php");
+	exit;
+}
 function registrasi($data)
 {
   global $db;
@@ -40,7 +44,7 @@ if (isset($_POST["register"])) {
     header("Location: login.php");
     exit;
   } else {
-    echo mysqli_error($connect);
+    echo mysqli_error($db);
   }
 }
 
@@ -52,13 +56,14 @@ if (isset($_POST["register"])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/logo.png">
   <title>Register</title>
 </head>
 
 <body>
   <div class="navbar">
     <nav class="fixed top-0 w-full">
-      <div class="px-3 py-3 lg:pb-0 lg:px-8">
+      <div class="px-4 py-3 lg:pb-0 lg:px-8">
         <div class="flex items-center">
           <div class="flex items-center">
             <img src="./images/logo.png" class="h-6 sm:h-7" />
@@ -69,7 +74,7 @@ if (isset($_POST["register"])) {
     </nav>
   </div>
 
-  <section class="bg-cover bg-center flex items-center p-6">
+  <section class="h-screen bg-cover bg-center flex items-center p-6">
     <div
       class="mx-auto grid md:grid-cols-2 bg-white py-5 lg:py-2 gap-4 lg:gap-16 justify-center items-center rounded-xl">
       <div class="md:p-6">
