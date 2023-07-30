@@ -39,8 +39,7 @@ include './connect.php';
           <img class="rounded w-full" src="images/<?php echo $foto ?>">
           <div class="py-2 px-1 text-left w-full">
             <h5 class="mb-1 text-sm font-bold tracking-tight text-gray-900">
-              <?php echo $r_tampil_buku['judul_buku']; ?> (
-              <?php echo $r_tampil_buku['tahun_terbit'] ?>)
+              <?php echo $r_tampil_buku['judul_buku']; ?> (<?php echo $r_tampil_buku['tahun_terbit'] ?>)
             </h5>
             <p class="mb-1 text-xs font-semibold text-gray-700">
               <?php echo $r_tampil_buku['penulis'] ?>

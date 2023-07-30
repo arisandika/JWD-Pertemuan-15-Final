@@ -49,7 +49,7 @@ require './connect.php';
                           ID Buku
                         </td>
                         <td class="py-2">
-                          <input type="text" name="id_buku" id="small-input" placeholder="ID Buku"
+                          <input type="text" name="id_buku" id="small-input" placeholder="Max length 5"
                             class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </td>
                       </tr>
@@ -193,7 +193,7 @@ require './connect.php';
         </tr>
       </thead>
       <?php
-      $batas = 4;
+      $batas = 10;
       extract($_GET);
 
       if (empty($hal)) {

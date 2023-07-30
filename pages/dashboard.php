@@ -33,8 +33,10 @@ $jumlah_data_tbpinjam_history = $row_tbpinjam_history_count[0];
               <?php echo $jumlah_data_anggota; ?> Anggota
             </span>
           </div>
-          <p class="text-xs text-gray-700">Go to this step by step guideline process on how
-            to certify for your weekly benefits:</p>
+          <a href="index.php?p=anggota" class="text-purple-600 text-xs">
+            <p>Lihat data anggota secara terperinci untuk mengelola informasi dengan
+              efisien.</p>
+          </a>
         </div>
       </div>
       <div class="flex items-center justify-center rounded bg-white border">
@@ -49,8 +51,9 @@ $jumlah_data_tbpinjam_history = $row_tbpinjam_history_count[0];
               <?php echo $jumlah_data_buku; ?> Buku
             </span>
           </div>
-          <p class="text-xs text-gray-700">Go to this step by step guideline process on how
-            to certify for your weekly benefits:</p>
+          <a href="index.php?p=buku" class="text-purple-600 text-xs">
+            <p>Lihat daftar lengkap koleksi buku kami dan kelola informasi buku dengan mudah.</p>
+          </a>
         </div>
       </div>
       <div class="flex items-center justify-center rounded bg-white border">
@@ -84,16 +87,18 @@ $jumlah_data_tbpinjam_history = $row_tbpinjam_history_count[0];
               <?php echo $jumlah_data_pinjam; ?> Peminjaman
             </span>
           </div>
-          <p class="text-xs text-gray-700">Go to this step by step guideline process on how
-            to certify for your weekly benefits:</p>
+          <a href="index.php?p=pinjam" class="text-purple-600 text-xs">
+            <p>Lihat statistik peminjaman buku dalam periode waktu tertentu melalui Dashboard Statistik Peminjaman Buku.
+            </p>
+          </a>
         </div>
       </div>
       <div class="flex items-center justify-center rounded bg-white border">
         <div class="p-5">
           <svg class="w-7 h-7 text-gray-700 mb-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor" viewBox="0 0 14 20">
+            fill="currentColor" viewBox="0 0 18 20">
             <path
-              d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z" />
+              d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z" />
           </svg>
           <div class="mb-2 text-lg font-bold tracking-tight text-gray-900">Informasi Transaksi Pengembalian<br>
             <span class="text-sm text-gray-700 font-semibold">
@@ -101,8 +106,11 @@ $jumlah_data_tbpinjam_history = $row_tbpinjam_history_count[0];
               <?php echo $jumlah_data_tbpinjam_history; ?> Riwayat Transaksi
             </span>
           </div>
-          <p class="text-xs text-gray-700">Go to this step by step guideline process on how
-            to certify for your weekly benefits:</p>
+          <a href="index.php?p=laporan" class="text-purple-600 text-xs">
+            <p>Lihat detail riwayat transaksi pengembalian anggota tertentu melalui Dashboard Riwayat Peminjaman dan
+              Pengembalian.
+            </p>
+          </a>
         </div>
       </div>
     </div>

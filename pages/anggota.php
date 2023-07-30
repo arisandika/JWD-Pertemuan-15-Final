@@ -61,7 +61,7 @@ require './connect.php';
                           ID Anggota
                         </td>
                         <td class="py-2">
-                          <input type="text" name="id_anggota" id="small-input" placeholder="ID Anggota" required
+                          <input type="text" name="id_anggota" id="small-input" placeholder="Max length 5" required
                             class="block w-full p-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </td>
                       </tr>
@@ -122,20 +122,20 @@ require './connect.php';
         </div>
       </div>
       <div class="relative mb-4">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-          </div>
-          <div>
-            <form method="post" class="flex gap-2">
-              <input type="text" name="pencarian"
-                class="block p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search for member">
-            </form>
-          </div>
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
+        </div>
+        <div>
+          <form method="post" class="flex gap-2">
+            <input type="text" name="pencarian"
+              class="block p-2 pl-10 text-sm text-gray-900 border border-white rounded-lg w-full h-9 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Search for member">
+          </form>
+        </div>
       </div>
     </div>
 
@@ -167,7 +167,7 @@ require './connect.php';
         </tr>
       </thead>
       <?php
-      $batas = 4;
+      $batas = 10;
       extract($_GET);
 
       if (empty($hal)) {

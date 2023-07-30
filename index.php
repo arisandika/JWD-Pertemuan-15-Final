@@ -8,6 +8,8 @@ if (!isset($_SESSION["login"])) {
   exit;
 }
 
+$name = $_SESSION["name"];
+
 $p_dir = 'pages';
 $view = isset($_GET['p']) ? basename($_GET['p']) : 'beranda';
 
@@ -30,9 +32,9 @@ $page_path = $p_dir . '/' . $view . '.php';
   <link rel="icon" href="./images/logo.png">
   <title>Perpusline</title>
   <style>
-  body {
-    background-color: #FAFBFD;
-  }
+    body {
+      background-color: #FAFBFD;
+    }
   </style>
 </head>
 
@@ -40,27 +42,25 @@ $page_path = $p_dir . '/' . $view . '.php';
   <!-- Navbar -->
   <div class="navbar">
     <nav class="fixed top-0 z-30 w-full border-b bg-white border-gray-200">
-      <div class="px-3 py-3 lg:px-5">
+      <div class="px-3 lg:py-3 py-2.5 lg:px-5">
         <div class="flex items-center justify-between sm:ml-64">
           <div class="flex items-center justify-start lg:hidden">
             <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
-              type="button"
-              class="inline-flex items-center p-2 text-sm rounded-lg sm:hidden hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-gray-200">
-              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd" fill-rule="evenodd"
-                  d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
-                </path>
+              type="button" class="inline-flex items-center p-2 text-gray-500 focus:outline-none">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                  d="M1 1h15M1 7h15M1 13h15" />
               </svg>
             </button>
           </div>
           <div class="block lg:hidden flex items-center">
-            <img src="./images/logo.png" class="h-6 sm:h-7" />
-            <span class="font-bold text-lg sm:text-xl text-purple-700 ml-1">Perpusline</span>
+            <img src="./images/logo.png" class="h-6 sm:h-8" />
+            <span class="font-bold text-xl text-purple-700 ml-1">Perpusline</span>
           </div>
           <div class="hidden lg:block relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              <svg class="w-3 h-3 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -76,21 +76,37 @@ $page_path = $p_dir . '/' . $view . '.php';
           </div>
           <div class="flex justify-end items-center">
             <div>
-              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 mr-2"
+              <button type="button" class="flex items-center lg:p-0 px-2 text-gray-500 focus:outline-none"
                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                <img class="w-8 h-8 rounded-full" src="images/3321.png" alt="user photo">
+                <img class="w-6 h-6 rounded-full hidden lg:block mr-2.5" src="./images/3321.png" alt="user photo">
+                <svg class="w-7 h-7 text-gray-800 block lg:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                    d="M10 19a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 11 14H9a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 10 19Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                <p class="text-xs font-semibold hidden lg:block">
+                  <?php echo $name; ?>
+                </p>
+                <svg class="w-2 h-2 ml-2 hidden lg:block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="m1 1 4 4 4-4" />
+                </svg>
               </button>
             </div>
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-purple-200 rounded shadow w-56"
               id="dropdown-user">
               <div class="px-4 py-3" role="none">
-                <p class="text-sm font-bold" role="none">
-                  Admin
-                </p>
+                <div class="flex items-center">
+                  <img class="w-6 h-6 rounded-full mr-2.5" src="./images/3321.png" alt="user photo">
+                  <p class="text-sm font-semibold" role="none">
+                    <?php echo $name; ?>
+                  </p>
+                </div>
               </div>
               <ul class="py-1" role="none">
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-200"
+                  <a href="index.php?p=dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-200"
                     role="menuitem">Dashboard</a>
                 </li>
                 <li>
@@ -185,9 +201,9 @@ $page_path = $p_dir . '/' . $view . '.php';
               class="flex items-center w-full p-2 cursor-pointer transition text-base rounded-lg group hover:bg-purple-200"
               aria-controls="dropdown-2" data-collapse-toggle="dropdown-2">
               <svg class="flex-shrink-0 w-5 h-5 group-hover:text-gray-900" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                 <path
-                  d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
+                  d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z" />
               </svg>
               <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm">Data Transaction</span>
               <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -241,49 +257,49 @@ $page_path = $p_dir . '/' . $view . '.php';
   </div>
 
   <script>
-  function handleLinkClick(event) {
-    event.preventDefault();
+    function handleLinkClick(event) {
+      event.preventDefault();
 
-    resetLinkBackground();
+      resetLinkBackground();
 
-    var links = event.currentTarget.parentElement.getElementsByTagName('a');
-    for (var i = 0; i < links.length; i++) {
-      links[i].classList.remove('active-link');
-      links[i].style.backgroundColor = "";
-    }
-
-    event.currentTarget.classList.add('active-link');
-    event.currentTarget.style.backgroundColor = "#6c2bd9";
-    event.currentTarget.style.color = "#fff";
-
-    loadContent(event.currentTarget.getAttribute('data-page'));
-  }
-
-  function resetLinkBackground() {
-    var links = document.querySelectorAll('.sidebar-item a');
-    for (var i = 0; i < links.length; i++) {
-      links[i].classList.remove('active-link');
-      links[i].style.backgroundColor = '';
-      links[i].style.color = '';
-    }
-  }
-
-  var links = document.querySelectorAll('.sidebar-item a');
-
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', handleLinkClick);
-  }
-
-  function loadContent(page) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("main-content").innerHTML = this.responseText;
+      var links = event.currentTarget.parentElement.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('active-link');
+        links[i].style.backgroundColor = "";
       }
-    };
-    xhttp.open("GET", "pages/" + page + ".php", true);
-    xhttp.send();
-  }
+
+      event.currentTarget.classList.add('active-link');
+      event.currentTarget.style.backgroundColor = "#6c2bd9";
+      event.currentTarget.style.color = "#fff";
+
+      loadContent(event.currentTarget.getAttribute('data-page'));
+    }
+
+    function resetLinkBackground() {
+      var links = document.querySelectorAll('.sidebar-item a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('active-link');
+        links[i].style.backgroundColor = '';
+        links[i].style.color = '';
+      }
+    }
+
+    var links = document.querySelectorAll('.sidebar-item a');
+
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', handleLinkClick);
+    }
+
+    function loadContent(page) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("main-content").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "pages/" + page + ".php", true);
+      xhttp.send();
+    }
   </script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />

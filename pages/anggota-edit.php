@@ -27,7 +27,7 @@ if (empty($r_tampil_anggota['foto']) || $r_tampil_anggota['foto'] == '-') {
             <div class="flex items-center justify-center w-full">
               <input
                 class="block w-full text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
-                id="small_size" type="file" name="foto"d>
+                id="small_size" type="file" name="foto">
             </div>
           </td>
         </tr>
@@ -37,7 +37,7 @@ if (empty($r_tampil_anggota['foto']) || $r_tampil_anggota['foto'] == '-') {
           </td>
           <td class="py-2">
             <input type="text" name="id_anggota" value="<?php echo $r_tampil_anggota['id_anggota']; ?>" id="small-input"
-              placeholder="ID Anggota" required
+              placeholder="Max length 5" required
               class="block w-full p-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
           </td>
         </tr>
@@ -59,14 +59,12 @@ if (empty($r_tampil_anggota['foto']) || $r_tampil_anggota['foto'] == '-') {
             <div class="flex items-center">
               <input id="default-radio-1" type="radio" value="Pria" name="jenis_kelamin" checked
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0">
-              <label for="default-radio-1"
-                class="ml-2 text-xs font-medium text-gray-600">Pria</label>
+              <label for="default-radio-1" class="ml-2 text-xs font-medium text-gray-600">Pria</label>
             </div>
             <div class="flex items-center">
               <input id="default-radio-2" type="radio" value="Wanita" name="jenis_kelamin"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-0">
-              <label for="default-radio-2"
-                class="ml-2 text-xs font-medium text-gray-600">Wanita</label>
+              <label for="default-radio-2" class="ml-2 text-xs font-medium text-gray-600">Wanita</label>
             </div>
           </td>
         </tr>

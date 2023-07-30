@@ -37,7 +37,7 @@ if (empty($r_tampil_buku['foto']) || $r_tampil_buku['foto'] == '-') {
           </td>
           <td class="py-2">
             <input type="text" name="id_buku" value="<?php echo $r_tampil_buku['id_buku']; ?>" id="small-input"
-              placeholder="ID Buku" required
+              placeholder="Max length 5" required
               class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
           </td>
         </tr>

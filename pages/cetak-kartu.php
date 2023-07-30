@@ -21,8 +21,8 @@ if (empty($r_tampil_anggota['foto']) || $r_tampil_anggota['foto'] == '-') {
 
 <section class="flex justify-center items-center bg-gray-200 h-screen p-4">
   <div style="width: 380px;">
-    <div class="bg-white border border-gray-500 pt-3 pb-10 rounded-lg px-6">
-      <div class="flex items-center justify-between border-b border-gray-500 pb-3">
+    <div class="bg-white border border-gray-500 pt-4 pb-10 rounded-lg px-6">
+      <div class="flex items-center justify-between border-b border-gray-500 pb-4">
         <img src="https://seeklogo.com/images/U/universitas-pamulang-logo-E63E1DF629-seeklogo.com.png" class="w-9 h-9">
         <div class="text-right">
           <div class="text-sm font-bold">Kartu Anggota Perpustakaan</div>

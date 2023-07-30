@@ -12,7 +12,7 @@ if (isset($_POST['simpan'])) {
   $nama_file = $_FILES['foto']['name'];
   $file_foto = $id_buku . "." . pathinfo($nama_file, PATHINFO_EXTENSION);
   $folder = "../images/" . $file_foto;
-  
+
   if (!empty($nama_file)) {
     $lokasi_file = $_FILES['foto']['tmp_name'];
     $image = imagecreatefromstring(file_get_contents($lokasi_file));

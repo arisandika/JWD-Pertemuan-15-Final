@@ -45,7 +45,7 @@ $result_buku = mysqli_query($db, $query_buku);
                           ID Peminjaman
                         </td>
                         <td class="py-2">
-                          <input type="text" name="id_peminjaman" id="small-input" placeholder="ID Peminjaman" required
+                          <input type="text" name="id_peminjaman" id="small-input" placeholder="Max length 5" required
                             class="block w-full p-2 text-xs border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </td>
                       </tr>
@@ -165,7 +165,7 @@ $result_buku = mysqli_query($db, $query_buku);
         </tr>
       </thead>
       <?php
-      $batas = 4;
+      $batas = 10;
       extract($_GET);
 
       if (empty($hal)) {

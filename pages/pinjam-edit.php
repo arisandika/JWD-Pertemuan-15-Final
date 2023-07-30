@@ -25,7 +25,7 @@ $r_tampil_pinjam = mysqli_fetch_array($q_tampil_pinjam);
           </td>
           <td class="py-2">
             <input type="text" name="id_peminjaman" value="<?php echo $r_tampil_pinjam['id_peminjaman']; ?>"
-              id="small-input" placeholder="ID Peminjaman" required
+              id="small-input" placeholder="Max length 5" required
               class="block w-full p-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
           </td>
         </tr>

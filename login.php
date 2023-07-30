@@ -17,6 +17,18 @@ if (isset($_POST["login"])) {
   if (mysqli_num_rows($result) === 1) {
     $row = mysqli_fetch_assoc($result);
     $_SESSION["login"] = true;
+    
+    $stmt = mysqli_prepare($db, "SELECT name FROM user WHERE username = ?");
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    
+    $result = mysqli_stmt_get_result($stmt);
+    if ($result && mysqli_num_rows($result) === 1) {
+      $name_row = mysqli_fetch_assoc($result);
+      $_SESSION["name"] = $name_row['name'];
+    } else {
+      $_SESSION["name"] = "Nama Pengguna Tidak Ditemukan";
+    }
 
     header("Location: index.php");
     exit;
