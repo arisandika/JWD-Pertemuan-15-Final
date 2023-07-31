@@ -117,7 +117,7 @@ $jumlah_data_tbpinjam_history = $row_tbpinjam_history_count[0];
     <div class="items-center w-full rounded bg-white">
       <div class="flex flex-col items-center bg-white border rounded md:flex-row">
         <img class="object-cover w-full rounded-t h-96 md:h-auto md:w-48 md:rounded-none"
-          src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="">
+          src="https://i.pinimg.com/564x/d3/fe/da/d3fedab00694e99f13e818f8511f86b5.jpg" alt="library-photo">
         <div class="flex flex-col justify-between p-5 leading-normal">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Perpusline - Empowering
             Readers: A Library for Everyone</h5>

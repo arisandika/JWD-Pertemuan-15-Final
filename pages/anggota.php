@@ -30,7 +30,7 @@ require './connect.php';
         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
           class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm py-2 px-5 focus:outline-none"
           type="button">
-          Tambah
+          Add
         </button>
 
         <!-- Main modal -->
@@ -106,7 +106,7 @@ require './connect.php';
                         </td>
                         <td class="flex justify-end py-4">
                           <button type="submit" name="simpan" value="simpan"
-                            class="px-5 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Simpan</button>
+                            class="px-5 py-2 text-sm font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300">Save</button>
                           <button type="button"
                             class="px-5 py-2 ml-2 text-sm font-medium text-center text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300"
                             data-modal-hide="authentication-modal">Close
@@ -167,7 +167,7 @@ require './connect.php';
         </tr>
       </thead>
       <?php
-      $batas = 10;
+      $batas = 20;
       extract($_GET);
 
       if (empty($hal)) {
